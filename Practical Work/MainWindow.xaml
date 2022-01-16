@@ -1,0 +1,70 @@
+﻿<Window x:Class="Practical_Work.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Practical_Work"
+        mc:Ignorable="d"
+        Title="MainWindow" SizeToContent="WidthAndHeight">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Действия">
+                <MenuItem x:Name="CheckFirstNumber" Header="Проверить цифру" ToolTip="Проверяет первую цифру трехзначного числа на четность и выводит результат"/>
+                <MenuItem x:Name="FindSumOfMultiple3" Header="Найти сумму кратных 3" ToolTip="Находит сумму тех чисел, которые кратны 3"/>
+            </MenuItem>
+            <MenuItem Header="Справка">
+                <MenuItem Header="Показать справку" InputGestureText="F1"/>
+                <MenuItem Header="О программе"/>
+            </MenuItem>
+        </Menu>
+        <TabControl>
+            <TabItem Header="Задание 1">
+                <DockPanel LastChildFill="False">
+                    <DockPanel DockPanel.Dock="Top">
+                        <Label Content="Трехзначное число:"/>
+                        <TextBox x:Name="ThreeNumber" Margin="0,2,0,2" VerticalContentAlignment="Center" MaxLength="3"/>
+                    </DockPanel>
+                    <DockPanel DockPanel.Dock="Top">
+                        <Label Content="Результат:"/>
+                        <TextBox x:Name="FirstNumber" Margin="0,2,0,2" VerticalContentAlignment="Center" ToolTip="Здесь отобразится результат проверки на четность первой цифры трехзначного числа" IsReadOnly="True"/>
+                    </DockPanel>
+                    <Button DockPanel.Dock="Top" Content="Проверить цифру" ToolTip="Проверяет первую цифру трехзначного числа на четность и выводит результат"/>
+                </DockPanel>
+            </TabItem>
+            <TabItem Header="Задание 2">
+                <DockPanel LastChildFill="False">
+                    <DockPanel DockPanel.Dock="Top">
+                        <Label Content="Первое число:"/>
+                        <TextBox x:Name="FirstValue" MaxLength="6" Margin="0,2,0,2" VerticalContentAlignment="Center"/>
+                    </DockPanel>
+                    <DockPanel DockPanel.Dock="Top">
+                        <Label Content="Второе число:"/>
+                        <TextBox x:Name="SecondValue" MaxLength="6" Margin="0,2,0,2" VerticalContentAlignment="Center"/>
+                    </DockPanel>
+                    <DockPanel DockPanel.Dock="Top">
+                        <Label Content="Третье число:"/>
+                        <TextBox x:Name="ThirdValue" MaxLength="6" Margin="0,2,0,2" VerticalContentAlignment="Center"/>
+                    </DockPanel>
+                    <DockPanel DockPanel.Dock="Top">
+                        <Label Content="Сумма чисел:"/>
+                        <TextBox x:Name="SumOfMultiple3" IsReadOnly="True" Margin="0,2,0,2" VerticalContentAlignment="Center" ToolTip="Здесь отобразится результат суммирования чисел, кратных 3"/>
+                    </DockPanel>
+                    <Button Content="Найти сумму" DockPanel.Dock="Top" ToolTip="Находит сумму тех чисел, которые кратны 3"/>
+                </DockPanel>
+            </TabItem>
+            <TabItem Header="Задание 3">
+                <DockPanel>
+                    <GroupBox Header="Первый массив">
+                        <DataGrid/>
+                    </GroupBox>
+                    <GroupBox Header="Второй массив">
+                        <DataGrid/>
+                    </GroupBox>
+                </DockPanel>
+            </TabItem>
+            <TabItem Header="Задание 4">
+                
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</Window>

@@ -54,12 +54,17 @@
             </TabItem>
             <TabItem Header="Задание 3">
                 <DockPanel>
+                    <DockPanel>
                     <GroupBox Header="Первый массив">
-                        <DataGrid/>
+                        <ListBox MinWidth="120" MinHeight="300"/>
                     </GroupBox>
                     <GroupBox Header="Второй массив">
-                        <DataGrid/>
+                        <ListBox MinWidth="120" MinHeight="300"/>
                     </GroupBox>
+                    </DockPanel>
+                    <DockPanel>
+                    <TextBox DockPanel.Dock="Right"/>
+                    </DockPanel>
                 </DockPanel>
             </TabItem>
             <TabItem Header="Задание 4">

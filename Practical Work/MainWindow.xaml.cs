@@ -12,6 +12,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using LibraryFinderFirstEven;
+using LibraryFinderSum;
+using LibraryFinderDominance;
+using LibraryFinderDifferentColumns;
+using VisualTable;
 
 namespace Practical_Work
 {
@@ -66,7 +71,7 @@ namespace Practical_Work
 	}
 	int[] _firstMas;
 	int[] _secondMas;
-	private void BothFill_Click(sender object, RoutedEventArgs e)
+	private void BothFill_Click(object sender, RoutedEventArgs e)
 	{
 		ThirdTask.Focus();
 		try
@@ -82,8 +87,8 @@ namespace Practical_Work
 				_firstMas[i] = rnd.Next(range);
 				_secondMas[i] = rnd.Next(range);
 			}
-			FirstMas.ItemsSource=VisualArray.ToDataTable(_firstMas).DefaultView;
-			SecondMas.ItemsSource=VisualArray.ToDataTable(_secondMas).DefaultView;
+			FirstMas.ItemsSource = VisualArray.ToDataTable(_firstMas).DefaultView;
+			SecondMas.ItemsSource = VisualArray.ToDataTable(_secondMas).DefaultView;
 			DominantCellCount.Clear();
 		}
 		catch(FormatException)
@@ -98,7 +103,7 @@ namespace Practical_Work
 	private void FindDominance_Click(object sender, RoutedEventArgs e)
 	{
 		ThirdTask.Focus();
-		DominantCellCount.Text = ClassFinderDominance.FindCellCountMoreSecondMas(in _firstMas, in _secondMas).ToString();
+		DominantCellCount.Text = ClassFinderDominanceForTwoMas.FindCellCountMoreSecondMas(in _firstMas, in _secondMas).ToString();
 	}
 	int[,] _matrix;
 	private void MatrixFill_Click(object sender, RoutedEventArgs e)
@@ -119,7 +124,7 @@ namespace Practical_Work
 					_matrix[i,j] = rnd.Next(range);
 				}
 			}
-			Matrix.ItemsSource=VisualArray.ToDataTable(_matrix).DefaultView;			
+			Matrix.ItemsSource = VisualArray.ToDataTable(_matrix).DefaultView;			
 			DifferentColumnCount.Clear();
 		}
 		catch(FormatException)

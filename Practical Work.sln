@@ -5,6 +5,16 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practical Work", "Practical Work\Practical Work.csproj", "{57C5C099-5A53-4D9F-AF82-60335689E8DA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryFinderFirstEven", "LibraryFinderFirstEven\LibraryFinderFirstEven.csproj", "{0AB6764B-C9B6-4920-BB89-ADB6456D572F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryFinderDominance", "LibraryFinderDominance\LibraryFinderDominance.csproj", "{6BD46F94-1002-4560-B308-DAF2FA608184}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryFinderSum", "LibraryFinderSum\LibraryFinderSum.csproj", "{20AC05A2-72DF-430A-8116-0C70C579F051}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryFinderDifferentColumns", "LibraryFinderDifferentColumns\LibraryFinderDifferentColumns.csproj", "{CEC53AE0-15C5-4850-983F-9D9C41156666}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisualTable", "..\..\..\Downloads\PW14-Lopatkin-master\PW14-Lopatkin-master\VisualTable\VisualTable.csproj", "{A123BB14-D85A-4148-8B5D-73393F0A4CA7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +25,26 @@ Global
 		{57C5C099-5A53-4D9F-AF82-60335689E8DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57C5C099-5A53-4D9F-AF82-60335689E8DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57C5C099-5A53-4D9F-AF82-60335689E8DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AB6764B-C9B6-4920-BB89-ADB6456D572F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AB6764B-C9B6-4920-BB89-ADB6456D572F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AB6764B-C9B6-4920-BB89-ADB6456D572F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AB6764B-C9B6-4920-BB89-ADB6456D572F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BD46F94-1002-4560-B308-DAF2FA608184}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BD46F94-1002-4560-B308-DAF2FA608184}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BD46F94-1002-4560-B308-DAF2FA608184}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BD46F94-1002-4560-B308-DAF2FA608184}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20AC05A2-72DF-430A-8116-0C70C579F051}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20AC05A2-72DF-430A-8116-0C70C579F051}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20AC05A2-72DF-430A-8116-0C70C579F051}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20AC05A2-72DF-430A-8116-0C70C579F051}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEC53AE0-15C5-4850-983F-9D9C41156666}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEC53AE0-15C5-4850-983F-9D9C41156666}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEC53AE0-15C5-4850-983F-9D9C41156666}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEC53AE0-15C5-4850-983F-9D9C41156666}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A123BB14-D85A-4148-8B5D-73393F0A4CA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A123BB14-D85A-4148-8B5D-73393F0A4CA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A123BB14-D85A-4148-8B5D-73393F0A4CA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A123BB14-D85A-4148-8B5D-73393F0A4CA7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

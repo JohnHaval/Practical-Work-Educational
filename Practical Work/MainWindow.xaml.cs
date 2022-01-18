@@ -167,5 +167,9 @@ namespace Practical_Work
 		"2) Размер строк для обычных значений - 6 (Кроме первого задания - 3)\n" +
 		"3) Клавиши заполнения таблицы и массивов не были внесены в меню из-за отсутствия надобности", "Справка", MessageBoxButton.OK, MessageBoxImage.Information);
 	}
+        private void AddColumn_Click(object sender, RoutedEventArgs e)
+        {
+			VisualArray.AddNewColumn(ref _matrix);
+        }
     }
 }

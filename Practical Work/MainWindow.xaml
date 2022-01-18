@@ -18,6 +18,12 @@
 		<MenuItem Header="Заполнить _массивы" x:Name="BothFill" Click="BothFill_Click"/>
 		<MenuItem Header="Заполнить _таблицу" x:Name="MatrixFill" Click="MatrixFill_Click"/>
 	    </MenuItem>
+            <MenuItem Header="Действия для таблицы">
+                <MenuItem x:Name="AddColumn" Header="Добавить столбец" Click="AddColumn_Click"/>
+                <MenuItem x:Name="AddRow" Header="Добавить строку"/>
+                <MenuItem x:Name="DelColumn" Header="Удалить столбец"/>
+                <MenuItem x:Name="DelRow" Header="Удалить строку"/>
+            </MenuItem>
 	    <MenuItem Header="_Очистить">
 		<MenuItem x:Name="BothClear" Header="Очистка _массивов" Click="BothClear_Click"/>
 		<MenuItem x:Name="MatrixClear" Header="Очистка _таблицы" Click="MatrixClear_Click"/>
@@ -112,7 +118,16 @@
                                 <Button Margin="7,3,1,2" Content="Заполнить" Click="MatrixFill_Click" TabIndex="3"/>
                             </DockPanel>
                         </GroupBox>
-                    <DataGrid x:Name="Matrix" MinWidth="700" MinHeight="180" DockPanel.Dock="Top" CanUserAddRows="False"/>
+                    <DataGrid x:Name="Matrix" MinWidth="700" MinHeight="180" DockPanel.Dock="Top" CanUserAddRows="False">
+                        <DataGrid.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Добавить столбец"/>
+                                <MenuItem Header="Добавить строку"/>
+                                <MenuItem Header="Удалить столбец"/>
+                                <MenuItem Header="Удалить строку"/>
+                            </ContextMenu>
+                        </DataGrid.ContextMenu>
+                    </DataGrid>
                 </DockPanel>
             </TabItem>
         </TabControl>

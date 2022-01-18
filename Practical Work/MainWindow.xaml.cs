@@ -151,7 +151,7 @@ namespace Practical_Work
 		SecondMas.ItemsSource = _secondMas = null;
 		DominantCellCount.Clear();
 	}	
-	private void MatrixClear()
+	private void MatrixClear_Click(object sender, RoutedEventArgs e)
 	{
 		Matrix.ItemsSource = _matrix = null;
 		DifferentColumnCount.Clear();

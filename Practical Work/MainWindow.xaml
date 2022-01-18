@@ -20,7 +20,7 @@
 	    </MenuItem>
 	    <MenuItem Header="_Очистить">
 		<MenuItem x:Name="BothClear" Header="Очистка _массивов" Click="BothClear_Click"/>
-		<MenuItem x:Name="MatrixClear" Header="Очистка _таблицы" Click="Matrix_Click"/>
+		<MenuItem x:Name="MatrixClear" Header="Очистка _таблицы" Click="MatrixClear_Click"/>
 	    </MenuItem>
             <MenuItem Header="_Справка">
                 <MenuItem x:Name="Help" Header="Показать _справку" InputGestureText="F1" Click="Help_Click"/>
@@ -93,26 +93,26 @@
                 </DockPanel>
             </TabItem>
             <TabItem x:Name="ForthTask" Header="Задание 4">
-                <DockPanel LastChildFill="False">
-			<DataGrid x:Name="Matrix" MinWidth="700" MinHeight="180" DockPanel.Dock="Top" CanUserAddRows="False"/>
-			<GroupBox Header="Для таблицы">
+            <DockPanel>
+            <GroupBox Header="Нахождение различных столбцов" DockPanel.Dock="Bottom">
+			<DockPanel>
+				<Label Content="Количество различных столбцов:"/>
+                <TextBox x:Name="DifferentColumnCount" MinWidth="70" Margin="1,3,1,2" IsReadOnly="True"/>
+                <Button Content="Найти столбцы" Margin="7,3,1,2" ToolTip="Находит количество столбцов, элементы которых являются различными" Click="FindDifferentColumnCount_Click" IsDefault="True"/>
+			</DockPanel>
+			</GroupBox>
+			<GroupBox Header="Для таблицы" DockPanel.Dock="Bottom">
                             <DockPanel>
                                 <Label Content="Столбцов:"/>
                                 <TextBox x:Name="ColumnCount" Margin="1,3,1,2" MinWidth="50" MaxLength="2"/>
-				<Label Content="Строк:"/>
+			                	<Label Content="Строк:"/>
                                 <TextBox x:Name="RowCount" Margin="1,3,1,2" MinWidth="50" MaxLength="2"/>
                                 <Label Content="Диапазон:" Margin="6,0" DockPanel.Dock="Left"/>
                                 <TextBox x:Name="RandomRangeForMatrix" MinWidth="50" Margin="1,3,1,2" MaxLength="6"/>
-                                <Button Margin="7,3,1,2" Content="Заполнить" Click="Matrix_Click"/>
+                                <Button Margin="7,3,1,2" Content="Заполнить" Click="MatrixFill_Click"/>
                             </DockPanel>
                         </GroupBox>
-			<GroupBox Header="Нахождение различных столбцов">
-			<DockPanel>
-				<Label Content="Количество различных столбцов:"/>
-                                <TextBox x:Name="DifferentColumnCount" MinWidth="70" Margin="1,3,1,2" IsReadOnly="True"/>
-                                <Button Content="Найти столбцы" Margin="7,3,1,2" ToolTip="Находит количество столбцов, элементы которых являются различными" Click="FindDifferentColumnCount_Click" IsDefault="True"/>
-			</DockPanel>
-			</GroupBox>
+                    <DataGrid x:Name="Matrix" MinWidth="700" MinHeight="180" DockPanel.Dock="Top" CanUserAddRows="False"/>
                 </DockPanel>
             </TabItem>
         </TabControl>

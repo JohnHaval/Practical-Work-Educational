@@ -63,7 +63,23 @@
                 </DockPanel>
             </TabItem>
             <TabItem x:Name="ThirdTask" Header="Задание 3">
-                <DockPanel LastChildFill="False">
+                <DockPanel>
+                        <GroupBox Header="Нахождение количество превосхождений" DockPanel.Dock="Bottom">
+                            <DockPanel>
+                                <Label Content="Количество элементов:"/>
+                                <TextBox x:Name="DominantCellCount" MinWidth="70" Margin="1,3,1,2" IsReadOnly="True"/>
+                                <Button Content="Найти превосхождения" Margin="7,3,1,2" ToolTip="Находит количество элементов первого массива, которые превосходят элементы второго" Click="FindDominance_Click" IsDefault="True"/>
+                            </DockPanel>
+                        </GroupBox>
+                        <GroupBox Header="Для двух массивов" DockPanel.Dock="Bottom">
+                            <DockPanel>
+                                <Label Content="Размер:"/>
+                                <TextBox x:Name="LengthForBothMas" Margin="1,3,1,2" MinWidth="50" MaxLength="2"/>
+                                <Label Content="Диапазон:" Margin="6,0" DockPanel.Dock="Left"/>
+                                <TextBox x:Name="RandomRangeForBothMas" MinWidth="50" Margin="1,3,1,2" MaxLength="6"/>
+                                <Button Margin="7,3,1,2" Content="Заполнить" Click="BothFill_Click"/>
+                            </DockPanel>
+                        </GroupBox>
                     <DockPanel DockPanel.Dock="Top">
                         <GroupBox Header="Первый массив">
                             <DataGrid x:Name="FirstMas" MinWidth="350" MinHeight="90" CanUserAddRows="False"/>
@@ -74,22 +90,6 @@
                             </GroupBox>
                         </DockPanel>
                     </DockPanel>
-                        <GroupBox Header="Для двух массивов" DockPanel.Dock="Top">
-                            <DockPanel>
-                                <Label Content="Размер:"/>
-                                <TextBox x:Name="LengthForBothMas" Margin="1,3,1,2" MinWidth="50" MaxLength="2"/>
-                                <Label Content="Диапазон:" Margin="6,0" DockPanel.Dock="Left"/>
-                                <TextBox x:Name="RandomRangeForBothMas" MinWidth="50" Margin="1,3,1,2" MaxLength="6"/>
-                                <Button Margin="7,3,1,2" Content="Заполнить" Click="BothFill_Click"/>
-                            </DockPanel>
-                        </GroupBox>
-                        <GroupBox Header="Нахождение количество превосхождений" DockPanel.Dock="Top">
-                            <DockPanel>
-                                <Label Content="Количество элементов:"/>
-                                <TextBox x:Name="DominantCellCount" MinWidth="70" Margin="1,3,1,2" IsReadOnly="True"/>
-                                <Button Content="Найти превосхождения" Margin="7,3,1,2" ToolTip="Находит количество элементов первого массива, которые превосходят элементы второго" Click="FindDominance_Click" IsDefault="True"/>
-                            </DockPanel>
-                        </GroupBox>
                 </DockPanel>
             </TabItem>
             <TabItem x:Name="ForthTask" Header="Задание 4">

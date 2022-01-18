@@ -171,5 +171,20 @@ namespace Practical_Work
         {
 			VisualArray.AddNewColumn(ref _matrix);
         }
+
+        private void AddRow_Click(object sender, RoutedEventArgs e)
+        {
+			VisualArray.AddNewRow(ref _matrix);
+        }
+
+        private void DelColumn_Click(object sender, RoutedEventArgs e)
+        {
+			VisualArray.DeleteColumn(ref _matrix, Matrix.CurrentCell.Column.DisplayIndex);
+        }
+
+        private void DelRow_Click(object sender, RoutedEventArgs e)
+        {
+			VisualArray.DeleteRow(ref _matrix, Matrix.SelectedIndex);
+        }
     }
 }

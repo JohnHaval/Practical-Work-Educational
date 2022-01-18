@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:Practical_Work"
         mc:Ignorable="d"
         Title="Practical Work" SizeToContent="WidthAndHeight">
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Help" Executed="Help_Click"/>
+    </Window.CommandBindings>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_Действия">
@@ -19,10 +22,13 @@
 		<MenuItem Header="Заполнить _таблицу" x:Name="MatrixFill" Click="MatrixFill_Click"/>
 	    </MenuItem>
             <MenuItem Header="Действия для таблицы">
+                <MenuItem Header="Отменить" IsEnabled="False"/>
+                <MenuItem Header="Вернуть" IsEnabled="False"/>
+                <Separator/>
                 <MenuItem x:Name="AddColumn" Header="Добавить столбец" Click="AddColumn_Click"/>
-                <MenuItem x:Name="AddRow" Header="Добавить строку"/>
-                <MenuItem x:Name="DelColumn" Header="Удалить столбец"/>
-                <MenuItem x:Name="DelRow" Header="Удалить строку"/>
+                <MenuItem x:Name="AddRow" Header="Добавить строку" Click="AddRow_Click"/>
+                <MenuItem x:Name="DelColumn" Header="Удалить столбец" Click="DelColumn_Click"/>
+                <MenuItem x:Name="DelRow" Header="Удалить строку" Click="DelRow_Click"/>
             </MenuItem>
 	    <MenuItem Header="_Очистить">
 		<MenuItem x:Name="BothClear" Header="Очистка _массивов" Click="BothClear_Click"/>
@@ -121,10 +127,10 @@
                     <DataGrid x:Name="Matrix" MinWidth="700" MinHeight="180" DockPanel.Dock="Top" CanUserAddRows="False">
                         <DataGrid.ContextMenu>
                             <ContextMenu>
-                                <MenuItem Header="Добавить столбец"/>
-                                <MenuItem Header="Добавить строку"/>
-                                <MenuItem Header="Удалить столбец"/>
-                                <MenuItem Header="Удалить строку"/>
+                                <MenuItem Header="Добавить столбец" Click="AddColumn_Click"/>
+                                <MenuItem Header="Добавить строку" Click="AddRow_Click"/>
+                                <MenuItem Header="Удалить столбец" Click="DelColumn_Click"/>
+                                <MenuItem Header="Удалить строку" Click="DelRow_Click"/>
                             </ContextMenu>
                         </DataGrid.ContextMenu>
                     </DataGrid>

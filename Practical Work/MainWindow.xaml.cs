@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Windows;
 using System.Windows.Controls;
 using LibraryFinderFirstEven;
@@ -6,7 +7,6 @@ using LibraryFinderSum;
 using LibraryFinderDominance;
 using LibraryFinderDifferentColumns;
 using VisualTable;
-using System.Data;
 
 namespace Practical_Work
 {

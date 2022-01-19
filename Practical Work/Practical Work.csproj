@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="TableCommands.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -95,10 +96,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Downloads\PW14-Lopatkin-master\PW14-Lopatkin-master\VisualTable\VisualTable.csproj">
-      <Project>{a123bb14-d85a-4148-8b5d-73393f0a4ca7}</Project>
-      <Name>VisualTable</Name>
-    </ProjectReference>
     <ProjectReference Include="..\LibraryFinderDifferentColumns\LibraryFinderDifferentColumns.csproj">
       <Project>{cec53ae0-15c5-4850-983f-9d9c41156666}</Project>
       <Name>LibraryFinderDifferentColumns</Name>
@@ -114,6 +111,10 @@
     <ProjectReference Include="..\LibraryFinderSum\LibraryFinderSum.csproj">
       <Project>{20ac05a2-72df-430a-8116-0c70c579f051}</Project>
       <Name>LibraryFinderSum</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VisualTable\VisualTable.csproj">
+      <Project>{a123bb14-d85a-4148-8b5d-73393f0a4ca7}</Project>
+      <Name>VisualTable</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

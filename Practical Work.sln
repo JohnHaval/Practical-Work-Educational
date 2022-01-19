@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryFinderSum", "Library
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryFinderDifferentColumns", "LibraryFinderDifferentColumns\LibraryFinderDifferentColumns.csproj", "{CEC53AE0-15C5-4850-983F-9D9C41156666}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisualTable", "..\..\..\Downloads\PW14-Lopatkin-master\PW14-Lopatkin-master\VisualTable\VisualTable.csproj", "{A123BB14-D85A-4148-8B5D-73393F0A4CA7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisualTable", "VisualTable\VisualTable.csproj", "{A123BB14-D85A-4148-8B5D-73393F0A4CA7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

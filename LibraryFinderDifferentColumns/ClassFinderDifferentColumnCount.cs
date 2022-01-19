@@ -18,7 +18,7 @@ namespace LibraryFinderDifferentColumns
 					bool proveDifferentValues = true;
 					for (int i = 0; i < array.GetLength(0) - 1; i++)
 					{
-						for (int ai = 1; ai < array.GetLength(0); ai++)
+						for (int ai = i + 1; ai < array.GetLength(0); ai++)
 						{
 							if (array[i, j] == array[ai, j])
 							{

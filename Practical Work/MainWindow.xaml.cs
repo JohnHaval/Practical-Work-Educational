@@ -145,16 +145,6 @@ namespace Practical_Work
 			int n, m, range;
 			try
 			{
-				n = Convert.ToInt32(RowCount.Text);
-			}
-			catch
-			{
-				MessageBox.Show("Некорректно введено значение строк!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-				RowCount.Focus();
-				return;
-			}	
-			try
-			{
 				m = Convert.ToInt32(ColumnCount.Text);			
 			}
 			catch
@@ -163,6 +153,16 @@ namespace Practical_Work
 				ColumnCount.Focus();
 				return;
 			}
+			try
+			{
+				n = Convert.ToInt32(RowCount.Text);
+			}
+			catch
+			{
+				MessageBox.Show("Некорректно введено значение строк!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+				RowCount.Focus();
+				return;
+			}	
 			try
 			{
 				range = Convert.ToInt32(RandomRangeForArr.Text);

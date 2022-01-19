@@ -352,10 +352,30 @@ namespace Practical_Work
 		private void ForthTask_GotFocus(object sender, RoutedEventArgs e)
 		{
 			ActionsForArr.IsEnabled = true;
+			MinWidth = 600;
+			MinHeight = 450;
 		}
 		private void ForthTask_LostFocus(object sender, RoutedEventArgs e)
 		{
 			ActionsForArr.IsEnabled = false;
+		}
+
+        private void FirstTask_GotFocus(object sender, RoutedEventArgs e)
+        {
+			MinWidth = 440;
+			MinHeight = 170;
+		}
+
+        private void SecondTask_GotFocus(object sender, RoutedEventArgs e)
+        {
+			MinWidth = 440;
+			MinHeight = 250;
+        }
+
+        private void ThirdTask_GotFocus(object sender, RoutedEventArgs e)
+        {
+			MinWidth = 600;
+			MinHeight = 450;
 		}
     }
 }

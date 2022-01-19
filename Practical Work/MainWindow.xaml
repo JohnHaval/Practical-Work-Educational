@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Practical_Work"
         mc:Ignorable="d"
-        Title="Practical Work" SizeToContent="WidthAndHeight" MinWidth="430" MinHeight="140" Icon="/Unknown.ico" WindowStartupLocation="CenterScreen">
+        Title="Practical Work" SizeToContent="WidthAndHeight" MinWidth="440" MinHeight="170" Icon="/Unknown.ico" WindowStartupLocation="CenterScreen">
     <Window.CommandBindings>
         <CommandBinding Command="ApplicationCommands.Help" Executed="Help_Click"/>
         <CommandBinding Command="{x:Static local:TableCommands.Undo}" Executed="Undo_Click"/>
@@ -46,7 +46,7 @@
             </MenuItem>
         </Menu>
         <TabControl>
-            <TabItem x:Name="FirstTask" Header="Задание 1">
+            <TabItem x:Name="FirstTask" Header="Задание 1" GotFocus="FirstTask_GotFocus" >
                 <DockPanel LastChildFill="False">
                     <DockPanel DockPanel.Dock="Top">
                         <Label Content="Трехзначное число:"/>
@@ -59,7 +59,7 @@
                     <Button DockPanel.Dock="Top" Content="Проверить цифру" ToolTip="Проверяет первую цифру трехзначного числа на четность и выводит результат" IsDefault="True" Click="CheckFirstNumber_Click"/>
                 </DockPanel>
             </TabItem>
-            <TabItem x:Name="SecondTask" Header="Задание 2">
+            <TabItem x:Name="SecondTask" Header="Задание 2" GotFocus="SecondTask_GotFocus">
                 <DockPanel LastChildFill="False">
                     <DockPanel DockPanel.Dock="Top">
                         <Label Content="Первое число:"/>
@@ -80,7 +80,7 @@
                     <Button Content="Найти сумму" DockPanel.Dock="Top" ToolTip="Находит сумму тех чисел, которые кратны 3" IsDefault="True" Click="FindSumOfMultiple3_Click"/>
                 </DockPanel>
             </TabItem>
-            <TabItem x:Name="ThirdTask" Header="Задание 3">
+            <TabItem x:Name="ThirdTask" Header="Задание 3" GotFocus="ThirdTask_GotFocus">
                 <DockPanel>
                         <GroupBox Header="Нахождение количество превосхождений" DockPanel.Dock="Bottom">
                             <DockPanel>
@@ -98,20 +98,23 @@
                                 <Button Margin="7,3,1,2" Content="Заполнить" Click="BothFill_Click" TabIndex="2"/>
                             </DockPanel>
                         </GroupBox>
-                    <DockPanel DockPanel.Dock="Top">
-                        <GroupBox Header="Первый массив">
-                            <DataGrid x:Name="FirstMas" MinWidth="350" MinHeight="90" CanUserAddRows="False" BeginningEdit="FirstMas_BeginningEdit" CellEditEnding="FirstMas_CellEditEnding"/>
+                    <Grid DockPanel.Dock="Top">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <GroupBox Header="Первый массив" Grid.Column="0">
+                            <DataGrid x:Name="FirstMas" CanUserAddRows="False" BeginningEdit="FirstMas_BeginningEdit" CellEditEnding="FirstMas_CellEditEnding"/>
                         </GroupBox>
-                        <DockPanel>
-                            <GroupBox Header="Второй массив">
-                                <DataGrid x:Name="SecondMas" MinWidth="350" MinHeight="90" CanUserAddRows="False" BeginningEdit="SecondMas_BeginningEdit" CellEditEnding="SecondMas_CellEditEnding" />
+                        <GridSplitter Width="3"/>
+                        <GroupBox Header="Второй массив" Grid.Column="1">
+                                <DataGrid x:Name="SecondMas" CanUserAddRows="False" BeginningEdit="SecondMas_BeginningEdit" CellEditEnding="SecondMas_CellEditEnding" />
                             </GroupBox>
-                        </DockPanel>
-                    </DockPanel>
+                    </Grid>
                 </DockPanel>
             </TabItem>
             <TabItem x:Name="ForthTask" Header="Задание 4" GotFocus="ForthTask_GotFocus" LostFocus="ForthTask_LostFocus">
-				<DockPanel>
+                <DockPanel>
 					<GroupBox Header="Нахождение различных столбцов" DockPanel.Dock="Bottom">
 						<DockPanel>
 							<Label Content="Количество различных столбцов:"/>
@@ -130,7 +133,7 @@
 						<Button Margin="7,3,1,2" Content="Заполнить" Click="ArrFill_Click" TabIndex="3"/>
 					</DockPanel>
 				</GroupBox>
-                    <DataGrid x:Name="Arr" MinWidth="700" MinHeight="180" DockPanel.Dock="Top" CanUserAddRows="False" CellEditEnding="Arr_CellEditEnding" BeginningEdit="Arr_BeginningEdit">
+                    <DataGrid x:Name="Arr" DockPanel.Dock="Top" CanUserAddRows="False" CellEditEnding="Arr_CellEditEnding" BeginningEdit="Arr_BeginningEdit">
                         <DataGrid.ContextMenu>
                             <ContextMenu>
                                 <MenuItem x:Name="UndoCM" Header="Отменить" IsEnabled="False" Click="Undo_Click"/>

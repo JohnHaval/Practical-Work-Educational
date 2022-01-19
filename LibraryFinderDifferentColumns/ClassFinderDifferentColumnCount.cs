@@ -8,19 +8,19 @@ namespace LibraryFinderDifferentColumns
 {
     public class ClassFinderDifferentColumnCount
     {
-		public static int FindDifferentColumnCount(in int[,] array)
+		public static int FindDifferentColumnCount(in int[,] arr)
 		{
-			if (array != null)
+			if (arr != null)
 			{
 				int columnCount = 0;
-				for (int j = 0; j < array.GetLength(1); j++)
+				for (int j = 0; j < arr.GetLength(1); j++)
 				{
 					bool proveDifferentValues = true;
-					for (int i = 0; i < array.GetLength(0) - 1; i++)
+					for (int i = 0; i < arr.GetLength(0) - 1; i++)
 					{
-						for (int ai = i + 1; ai < array.GetLength(0); ai++)
+						for (int ai = i + 1; ai < arr.GetLength(0); ai++)
 						{
-							if (array[i, j] == array[ai, j])
+							if (arr[i, j] == arr[ai, j])
 							{
 								proveDifferentValues = false;
 								break;

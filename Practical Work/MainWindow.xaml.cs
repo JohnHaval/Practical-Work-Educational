@@ -354,6 +354,7 @@ namespace Practical_Work
 			ActionsForArr.IsEnabled = true;
 			MinWidth = 600;
 			MinHeight = 450;
+			SizeToContent = SizeToContent.Manual;
 		}
 		private void ForthTask_LostFocus(object sender, RoutedEventArgs e)
 		{
@@ -376,6 +377,7 @@ namespace Practical_Work
         {
 			MinWidth = 600;
 			MinHeight = 450;
+			SizeToContent = SizeToContent.Manual;
 		}
     }
 }

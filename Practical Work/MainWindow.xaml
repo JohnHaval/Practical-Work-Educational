@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Practical_Work"
         mc:Ignorable="d"
-        Title="Practical Work" SizeToContent="WidthAndHeight" MinWidth="500" MinHeight="400">
+        Title="Practical Work" SizeToContent="WidthAndHeight" MinWidth="430" MinHeight="140" Icon="/Unknown.ico" WindowStartupLocation="CenterScreen">
     <Window.CommandBindings>
         <CommandBinding Command="ApplicationCommands.Help" Executed="Help_Click"/>
         <CommandBinding Command="{x:Static local:TableCommands.Undo}" Executed="Undo_Click"/>

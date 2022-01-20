@@ -15,7 +15,7 @@ namespace Practical_Work
 				Undo = new RoutedUICommand("CommandScalePlus", "MainCommands", typeof(TableCommands), undo);
 			InputGestureCollection redo = new InputGestureCollection()
 			{
-				new KeyGesture(Key.Z, ModifierKeys.Control, "Ctrl+Y"),
+				new KeyGesture(Key.Y, ModifierKeys.Control, "Ctrl+Y"),
 			};
 				InputGesture secondKeysRedo = new KeyGesture(Key.Z, ModifierKeys.Control | ModifierKeys.Shift);
 				redo.Add(secondKeysRedo);

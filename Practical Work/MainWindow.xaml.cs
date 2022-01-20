@@ -192,9 +192,9 @@ namespace Practical_Work
 					_arr[i,j] = rnd.Next(range);
 				}
 			}
+			VisualArray.ClearUndoAndRedo();
 			Arr.ItemsSource = VisualArray.ToDataTable(_arr).DefaultView;			
 			DifferentColumnCount.Clear();
-			VisualArray.ClearUndoAndRedo();
 
 		}
 		private void MessageAboutErrorRange()
@@ -345,6 +345,7 @@ namespace Practical_Work
 			{
 				Arr.ItemsSource = VisualArray.Undo().DefaultView;
 				_arr = VisualArray.SyncData();
+				DifferentColumnCount.Clear();
 				if (VisualArray.ReservedTable.Count == 0) UndoM.IsEnabled = UndoCM.IsEnabled = false;
 				if (VisualArray.CancelledChanges.Count > 0) RedoM.IsEnabled = RedoCM.IsEnabled = true;
 			}
@@ -355,8 +356,9 @@ namespace Practical_Work
 			{
 				Arr.ItemsSource = VisualArray.Redo().DefaultView;
 				_arr = VisualArray.SyncData();
+				DifferentColumnCount.Clear();
 				if (VisualArray.CancelledChanges.Count == 0) RedoM.IsEnabled = RedoCM.IsEnabled = false;
-				if (VisualArray.ReservedTable.Count != 0) UndoM.IsEnabled = UndoCM.IsEnabled = true;
+				if (VisualArray.ReservedTable.Count > 0) UndoM.IsEnabled = UndoCM.IsEnabled = true;
 			}
 		}/// <summary>
 		/// Используется для включения отмены, если произошли изменения таблицы 

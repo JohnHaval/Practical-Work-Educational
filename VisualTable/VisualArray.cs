@@ -7,8 +7,7 @@ namespace VisualTable
     ///Класс для связывания массива с элементом DataGrid
     ///для визуализации данных, где усовершенствовано на удаление значений, восстановление при необходимости.
     ///Синхронизацию данных после выполнения undo and redo обязательно
-    ///Данные резервируются посредством взаимодействия двух методов ReserveTable и SyncData
-    ///Пример: VisualArray.ReserveTable(SyncData());
+    ///Во всех (почти) методах выходным значением является _res (таблица)
     /// </summary>
     public static class VisualArray
     {        
@@ -23,7 +22,7 @@ namespace VisualTable
         /// Метод заполнения таблицы для одномерного значения (может использоваться для вывода результатов)
         /// </summary>
         /// <param name="matrix"></param>
-        /// <returns></returns>
+        /// <returns>_res</returns>
         public static DataTable ToDataTable(int[] matrix)
         {
             DataTable result = new DataTable();
@@ -64,7 +63,7 @@ namespace VisualTable
         /// <summary>
         /// Добавление новой строки в таблицу
         /// </summary>
-        /// <returns></returns>
+        /// <returns>_res</returns>
         public static DataTable AddNewRow(ref int [,] dmas)
         {
             DataRow row;
@@ -80,7 +79,7 @@ namespace VisualTable
         /// Удаление строки из таблицы (динамически по индексу)
         /// </summary>
         /// <param name="index"></param>
-        /// <returns></returns>
+        /// <returns>_res</returns>
         public static DataTable DeleteRow(ref int [,] dmas, int index)
         {
             DataRow row = _res.Rows[index];
@@ -90,7 +89,7 @@ namespace VisualTable
         }/// <summary>
         /// Добавление столбца в таблицу
         /// </summary>
-        /// <returns></returns>
+        /// <returns>_res</returns>
         public static DataTable AddNewColumn(ref int [,] dmas)
         {            
             dmas = AddNewColumnIntoMas(dmas);            
@@ -100,7 +99,7 @@ namespace VisualTable
         /// Удаление столбца в таблице (динамически по индексу)
         /// </summary>
         /// <param name="index"></param>
-        /// <returns></returns>
+        /// <returns>_res</returns>
         public static DataTable DeleteColumn(ref int[,] dmas, int index)
         {            
             dmas = DeleteColumnIntoMas(dmas, index);            
@@ -111,7 +110,7 @@ namespace VisualTable
         /// Обновление значений для массива относительно таблицы (необходимо использовать в основной программе после метода cancel или redo)
         /// для успешного восстановления значений или возврата к проделанным изменениям
         /// </summary>
-        /// <returns></returns>
+        /// <returns>dmas - двумерный массив, сформированный из значений таблицы</returns>
         public static int[,] SyncData()
         {            
             int[,] dmas = new int[_res.Rows.Count, _res.Columns.Count];
@@ -129,7 +128,7 @@ namespace VisualTable
         /// Добавление столбца в массив
         /// </summary>
         /// <param name="dmas"></param>
-        /// <returns></returns>
+        /// <returns>newdmas - новый массив с добавленным столбцом</returns>
         public static int[,] AddNewColumnIntoMas(int [,] dmas)
         {
             int[,] newdmas = new int[dmas.GetLength(0), dmas.GetLength(1) + 1];
@@ -145,7 +144,7 @@ namespace VisualTable
         /// Добавление новой строки в массив
         /// </summary>
         /// <param name="dmas"></param>
-        /// <returns></returns>
+        /// <returns>newdmas - новый массив с добавленной строкой</returns>
         public static int[,] AddNewRowIntoMas(int[,] dmas)
         {
             int[,] newdmas = new int[dmas.GetLength(0) + 1, dmas.GetLength(1)];
@@ -166,7 +165,7 @@ namespace VisualTable
         /// </summary>
         /// <param name="dmas"></param>
         /// <param name="index"></param>
-        /// <returns></returns>
+        /// <returns>_res</returns>
         public static int[,] DeleteColumnIntoMas(int[,] dmas, int index)
         {
             int[,] newdmas = new int[dmas.GetLength(0), dmas.GetLength(1) - 1];           
@@ -201,7 +200,7 @@ namespace VisualTable
         }/// <summary>
          /// Отмена изменений таблицы
          /// </summary>
-         /// <returns></returns>
+         /// <returns>_res</returns>
         public static DataTable Undo()
         {
             if (_reservedtable.Count > 1)
@@ -216,7 +215,7 @@ namespace VisualTable
         /// <summary>
         /// Отмена возврата изменений
         /// </summary>
-        /// <returns></returns>
+        /// <returns>_res</returns>
         public static DataTable Redo()
         {
             if (_cancelledchanges.Count > 0)

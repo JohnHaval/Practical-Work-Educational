@@ -1,7 +1,11 @@
 ﻿namespace LibraryFinderDifferentColumns
 {
     public class ClassFinderDifferentColumnCount
-    {
+    {/// <summary>
+	/// Используется для нахождения количества столбцов, значения которых различны
+	/// </summary>
+	/// <param name="arr">Двумерный массив</param>
+	/// <returns>0 или columnCount, в зависимости от входного значения</returns>
 		public static int FindDifferentColumnCount(in int[,] arr)
 		{
 			if (arr != null)

@@ -226,14 +226,17 @@ namespace Practical_Work
 		}
 		private void AboutProgram_Click(object sender, RoutedEventArgs e)
 		{
-			MessageBox.Show("Лопаткин Сергей ИСП-31. Задание по учебной практике.","О программе", MessageBoxButton.OK, MessageBoxImage.Information);
+			MessageBox.Show("Лопаткин Сергей ИСП-31. Задание по учебной практике.\n" +
+				"№1.Ввести трехзначное число. Определить: начинается ли оно четной цифрой\n" +
+				"№2.Ввести три целых числа. Найти сумму тех чисел, которые кратны 3\n" +
+				"№3.Заданы два массива. Проверить, сколько элементов первого массива превосходят соответствующие элементы второго массива\n" +
+				"№4.Дана целочисленная матрица M * N. Найти количество ее столбцов, все элементы которых различны","О программе", MessageBoxButton.OK, MessageBoxImage.Information);
 		}
 		private void Help_Click(object sender, RoutedEventArgs e)
 		{
 			MessageBox.Show("Включены следующие особенности в программу:\n" +
 			"1) Размер строк для размеров массивов и таблицы - 2\n" +
-			"2) Размер строк для обычных значений - 6 (Кроме первого задания - 3)\n" +
-			"3) Клавиши заполнения таблицы и массивов не были внесены в меню из-за отсутствия надобности", "Справка", MessageBoxButton.OK, MessageBoxImage.Information);
+			"2) Размер строк для обычных значений - 6 (Кроме первого задания - 3)", "Справка", MessageBoxButton.OK, MessageBoxImage.Information);
 		}
         private void AddColumn_Click(object sender, RoutedEventArgs e)
         {

@@ -1,7 +1,12 @@
 ﻿namespace LibraryFinderDominance
 {
     public class ClassFinderDominanceForTwoMas
-    {
+    {/// <summary>
+	/// Используется для нахождения количества ячеек первого массива, значение которых превосходит значение соответствущих ячеек второго массива
+	/// </summary>
+	/// <param name="firstMas">Первый массив</param>
+	/// <param name="secondMas">Второй массив</param>
+	/// <returns>0 или count, в зависимости от входных значений</returns>
 		public static int FindCellCountMoreSecondMas(in int[] firstMas, in int[] secondMas)
 		{
 			if (firstMas != null && secondMas != null)

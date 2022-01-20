@@ -1,7 +1,9 @@
 ﻿using System.Windows.Input;
 
 namespace Practical_Work
-{
+{/// <summary>
+/// Используется для горячих клавиш таблицы
+/// </summary>
 		public static class TableCommands
 		{
 			static TableCommands()

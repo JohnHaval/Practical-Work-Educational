@@ -48,7 +48,7 @@ namespace Practical_Work
 		private void FindSumOfMultiple3_Click(object sender, RoutedEventArgs e)
 		{
 			SecondTask.Focus();
-			int firstValue, secondValue, thirdValue;
+			int firstValue, secondValue, thirdValue;//Описание 3-х чисел
 			try
 			{
 				firstValue = Convert.ToInt32(FirstValue.Text);
@@ -85,11 +85,11 @@ namespace Practical_Work
 		{
 			SumOfMultiple3.Clear();
 		}
-		int[] _firstMas;
+		int[] _firstMas;//Два массива по заданию
 		int[] _secondMas;
 		private void BothFill_Click(object sender, RoutedEventArgs e)
 		{
-			int n, range;
+			int n, range;//Описание размера массивов и диапазона соответственно
 			ThirdTask.Focus();
 			try
 			{
@@ -124,7 +124,7 @@ namespace Practical_Work
 			_firstMas = new int[n];
 			_secondMas = new int[n];
 			Random rnd = new Random();
-			for(int i = 0; i < n; i++)
+			for(int i = 0; i < n; i++)//Заполнение
 			{
 				_firstMas[i] = rnd.Next(range);
 				_secondMas[i] = rnd.Next(range);
@@ -138,7 +138,7 @@ namespace Practical_Work
 			ThirdTask.Focus();
 			DominantCellCount.Text = ClassFinderDominanceForTwoMas.FindCellCountMoreSecondMas(in _firstMas, in _secondMas).ToString();
 		}
-		int[,] _arr;
+		int[,] _arr;//Двумерный массив для таблицы
 		private void ArrFill_Click(object sender, RoutedEventArgs e)
 		{
 			ForthTask.Focus();
@@ -194,7 +194,8 @@ namespace Practical_Work
 			}
 			Arr.ItemsSource = VisualArray.ToDataTable(_arr).DefaultView;			
 			DifferentColumnCount.Clear();
-			
+			VisualArray.ClearUndoAndRedo();
+
 		}
 		private void MessageAboutErrorRange()
 		{
@@ -220,7 +221,8 @@ namespace Practical_Work
 			ForthTask.Focus();
 			Arr.ItemsSource = _arr = null;
 			UndoM.IsEnabled = UndoCM.IsEnabled = RedoM.IsEnabled = RedoCM.IsEnabled = false;
-			DifferentColumnCount.Clear();			
+			DifferentColumnCount.Clear();
+			VisualArray.ClearUndoAndRedo();
 		}
 		private void AboutProgram_Click(object sender, RoutedEventArgs e)
 		{
@@ -235,7 +237,7 @@ namespace Practical_Work
 		}
         private void AddColumn_Click(object sender, RoutedEventArgs e)
         {
-			if (ActionsForArr.IsEnabled == true)
+			if (ActionsForArr.IsEnabled == true)//Проверка используется для возможности использования горячих клавиш (не работает добавление, если элемент в меню отключен)
 			{
 				Arr.ItemsSource = VisualArray.AddNewColumn(ref _arr).DefaultView;
 				EnableUndo();
@@ -255,10 +257,14 @@ namespace Practical_Work
         {		
 			if (ActionsForArr.IsEnabled == true)
 			{		
-				if (Arr.CurrentCell.Column != null) 
+				if (Arr.CurrentCell.Column != null) //Проверка для исключения ошибки
 				{
-					Arr.ItemsSource = VisualArray.DeleteColumn(ref _arr, Arr.CurrentCell.Column.DisplayIndex).DefaultView;
-					EnableUndo();
+					if (Arr.CurrentCell.Column.DisplayIndex != -1)
+					{
+						Arr.ItemsSource = VisualArray.DeleteColumn(ref _arr, Arr.CurrentCell.Column.DisplayIndex).DefaultView;
+						EnableUndo();
+					}
+					else MessageBox.Show("Для удаления столбца необходимо его выбрать!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Warning);
 				}
 				else MessageBox.Show("Для удаления столбца необходимо его выбрать!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Warning);				
 			}
@@ -276,7 +282,7 @@ namespace Practical_Work
 				}
 			}
         }
-		string cell;
+		string cell;//Переменная для хранения резервного значения на случай кривого ввода пользователя
 		private void FirstMas_BeginningEdit(object sender, DataGridBeginningEditEventArgs e)
 		{
 			int iColumn = e.Column.DisplayIndex;
@@ -334,6 +340,7 @@ namespace Practical_Work
 				Arr.ItemsSource = VisualArray.Undo().DefaultView;
 				_arr = VisualArray.SyncData();
 				if (VisualArray.ReservedTable.Count == 0) UndoM.IsEnabled = UndoCM.IsEnabled = false;
+				if (VisualArray.CancelledChanges.Count > 0) RedoM.IsEnabled = RedoCM.IsEnabled = true;
 			}
 		}
 		private void Redo_Click(object sender, RoutedEventArgs e)
@@ -343,8 +350,11 @@ namespace Practical_Work
 				Arr.ItemsSource = VisualArray.Redo().DefaultView;
 				_arr = VisualArray.SyncData();
 				if (VisualArray.CancelledChanges.Count == 0) RedoM.IsEnabled = RedoCM.IsEnabled = false;
+				if (VisualArray.ReservedTable.Count != 0) UndoM.IsEnabled = UndoCM.IsEnabled = true;
 			}
-		}
+		}/// <summary>
+		/// Используется для включения отмены, если произошли изменения таблицы 
+		/// </summary>
 		private void EnableUndo()
 		{
 			UndoM.IsEnabled = UndoCM.IsEnabled = true;
@@ -354,14 +364,14 @@ namespace Practical_Work
 			ActionsForArr.IsEnabled = true;
 			MinWidth = 600;
 			MinHeight = 450;
-			SizeToContent = SizeToContent.Manual;
+			SizeToContent = SizeToContent.Manual;//Используется для изменения размера под "контент", чтобы при создании таблицы не было растягивания на все мониторы
 		}
 		private void ForthTask_LostFocus(object sender, RoutedEventArgs e)
 		{
 			ActionsForArr.IsEnabled = false;
 		}
 
-        private void FirstTask_GotFocus(object sender, RoutedEventArgs e)
+        private void FirstTask_GotFocus(object sender, RoutedEventArgs e)//Использется для изменения минимума (в соответствии с логическим представлением программы)
         {
 			MinWidth = 440;
 			MinHeight = 170;

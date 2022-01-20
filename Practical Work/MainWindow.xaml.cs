@@ -311,6 +311,7 @@ namespace Practical_Work
 			{
 				int iColumn = e.Column.DisplayIndex;
 				_firstMas[iColumn] = currentCell;
+				DominantCellCount.Clear();
 			}
 			else ((TextBox)e.EditingElement).Text = cell;
 		}
@@ -321,6 +322,7 @@ namespace Practical_Work
 			{
 				int iColumn = e.Column.DisplayIndex;
 				_secondMas[iColumn] = currentCell;
+				DominantCellCount.Clear();
 			}
 			else ((TextBox)e.EditingElement).Text = cell;
 		}
@@ -332,6 +334,7 @@ namespace Practical_Work
 				int iRow = e.Row.GetIndex();
 				_arr[iRow, iColumn] = currentCell;
 				VisualArray.ReserveTable(_arr);
+				DifferentColumnCount.Clear();
 				EnableUndo();				
 			}
 			else ((TextBox)e.EditingElement).Text = cell;

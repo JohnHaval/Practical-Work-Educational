@@ -24,18 +24,18 @@ namespace Practical_Work
 			FirstTask.Focus();
 			try
 			{
-				if (ThreeNumber.Text.Length != 3) throw new Exception("Length Is Not 3");
-				int number = Convert.ToInt32(ThreeNumber.Text)/100;
-				bool checkNumber = ClassFinderFirstEven.FindFirstEven(Convert.ToInt32(ThreeNumber.Text));		
-				if (checkNumber) FirstNumber.Text = $"Первая цифра - {number}, является четной";
+				if (ThreeNumber.Text.Length != 3) throw new Exception("Length Is Not 3");//Проверка на трехзначность числа
+				int number = Convert.ToInt32(ThreeNumber.Text)/100;//Выделение первой цифры
+				bool checkNumber = ClassFinderFirstEven.FindFirstEven(Convert.ToInt32(ThreeNumber.Text));//Обращение к методу, разработанному по заданию
+				if (checkNumber) FirstNumber.Text = $"Первая цифра - {number}, является четной";//Вывод результата
 				else FirstNumber.Text = $"Первая цифра - {number}, не является четной";
 			}
-			catch (FormatException)
+			catch (FormatException)//Исключение, происходящее при безуспешной конвертации
 			{
 				MessageBox.Show("Некорректно введено значение, необходимо число!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
 				ThreeNumber.Focus();
 			}
-			catch
+			catch //Используется для недостаточного ввода количества цифр в поле
 			{
 				MessageBox.Show("Некорректно введено значение, необходимо трехзначное число!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);	
 				ThreeNumber.Focus();
@@ -49,7 +49,7 @@ namespace Practical_Work
 		{
 			SecondTask.Focus();
 			int firstValue, secondValue, thirdValue;//Описание 3-х чисел
-			try
+			try//Проверка на некорректность ввода для отдельного поля и перевод фокуса на него
 			{
 				firstValue = Convert.ToInt32(FirstValue.Text);
 			}
@@ -79,7 +79,7 @@ namespace Practical_Work
 				ThirdValue.Focus();
 				return;
 			}
-			SumOfMultiple3.Text = ClassFinderSumOfMultiple.FindSumOfMultiple3(firstValue, secondValue, thirdValue).ToString();
+			SumOfMultiple3.Text = ClassFinderSumOfMultiple.FindSumOfMultiple3(firstValue, secondValue, thirdValue).ToString();//Обращение к методу по заданию и вывод результата в поле
 		}
 		private void SecondTask_TextChanged(object sender, TextChangedEventArgs e)
 		{
@@ -135,7 +135,7 @@ namespace Practical_Work
 		}
 		private void FindDominance_Click(object sender, RoutedEventArgs e)
 		{
-			ThirdTask.Focus();
+			ThirdTask.Focus();//Фокус, который используется для перевода на вкладку ThirdTask при нажатии кнопки в меню
 			DominantCellCount.Text = ClassFinderDominanceForTwoMas.FindCellCountMoreSecondMas(in _firstMas, in _secondMas).ToString();
 		}
 		int[,] _arr;//Двумерный массив для таблицы

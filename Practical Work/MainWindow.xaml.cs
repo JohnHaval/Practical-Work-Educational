@@ -94,10 +94,11 @@ namespace Practical_Work
 			try
 			{
 				n = Convert.ToInt32(LengthForBothMas.Text);
+				if (n < 0) throw new Exception();
 			}
 			catch
 			{
-				MessageBox.Show("Некорректно введено значение размера массивов!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+				MessageBox.Show("Некорректно введено значение размера массивов! Нужно число больше или равно 0", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
 				LengthForBothMas.Focus();
 				return;
 			}
@@ -145,21 +146,23 @@ namespace Practical_Work
 			int n, m, range;
 			try
 			{
-				m = Convert.ToInt32(ColumnCount.Text);			
+				m = Convert.ToInt32(ColumnCount.Text);
+				if (m < 0) throw new Exception();
 			}
 			catch
 			{
-				MessageBox.Show("Некорректно введено значение столбцов!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+				MessageBox.Show("Некорректно введено значение столбцов! Нужно число больше или равно 0", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
 				ColumnCount.Focus();
 				return;
 			}
 			try
 			{
 				n = Convert.ToInt32(RowCount.Text);
+				if (n < 0) throw new Exception();
 			}
 			catch
 			{
-				MessageBox.Show("Некорректно введено значение строк!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+				MessageBox.Show("Некорректно введено значение строк! Нужно число больше или равно 0", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
 				RowCount.Focus();
 				return;
 			}	

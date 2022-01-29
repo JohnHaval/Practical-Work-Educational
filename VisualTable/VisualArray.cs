@@ -131,13 +131,21 @@ namespace VisualTable
         /// <returns>newdmas - новый массив с добавленным столбцом</returns>
         public static int[,] AddNewColumnIntoMas(int [,] dmas)
         {
-            int[,] newdmas = new int[dmas.GetLength(0), dmas.GetLength(1) + 1];
-            for (int i = 0; i < dmas.GetLength(0); i++)
+            int[,] newdmas;
+            if (dmas != null)
             {
-                for (int j = 0; j < dmas.GetLength(1); j++)
+                newdmas = new int[dmas.GetLength(0), dmas.GetLength(1) + 1];
+                for (int i = 0; i < dmas.GetLength(0); i++)
                 {
-                    newdmas[i, j] = dmas[i, j];
+                    for (int j = 0; j < dmas.GetLength(1); j++)
+                    {
+                        newdmas[i, j] = dmas[i, j];
+                    }
                 }
+            }
+            else
+            {
+                newdmas = new int[0, 1];
             }
             return newdmas;
         }/// <summary>
@@ -147,13 +155,21 @@ namespace VisualTable
         /// <returns>newdmas - новый массив с добавленной строкой</returns>
         public static int[,] AddNewRowIntoMas(int[,] dmas)
         {
-            int[,] newdmas = new int[dmas.GetLength(0) + 1, dmas.GetLength(1)];
-            for (int i = 0; i < dmas.GetLength(0); i++)
+            int[,] newdmas;
+            if (dmas != null)
             {
-                for (int j = 0; j < dmas.GetLength(1); j++)
+                newdmas = new int[dmas.GetLength(0) + 1, dmas.GetLength(1)];
+                for (int i = 0; i < dmas.GetLength(0); i++)
                 {
-                    newdmas[i, j] = dmas[i, j];
+                    for (int j = 0; j < dmas.GetLength(1); j++)
+                    {
+                        newdmas[i, j] = dmas[i, j];
+                    }
                 }
+            }
+            else
+            {
+                newdmas = new int[1, 0];
             }
             return newdmas;
         }
